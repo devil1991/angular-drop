@@ -1,0 +1,7 @@
+markdown:    redcarpet
+highlighter: pygments
+safe: true
+lsi: false
+
+redcarpet:
+  extensions: [smart, tables, no_intra_emphasis, autolink]

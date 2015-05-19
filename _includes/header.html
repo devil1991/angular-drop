@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-us" ng-app="app">
+  <head>
+    <meta charset="UTF-8">
+    <title>{{ page.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/custom.css" media="screen">
+
+
+    <link rel="stylesheet" href="./dropjs/css/drop-theme-basic.css"></link>
+    <link rel="stylesheet" href="./dropjs/css/drop-theme-hubspot-popovers.css"></link>
+    <link rel="stylesheet" href="./dropjs/css/drop-theme-arrows-bounce-dark.css"></link>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="./tetherjs/tether.min.js"></script>
+    <script type="text/javascript" src="./dropjs/js/drop.min.js"></script>
+    <script type="text/javascript" src="./javascripts/angular-drop.js"></script>
+    <script type="text/javascript">
+      (function(angular) { 'use strict';
+        angular.module('app', ['angularEffDrop']);
+      })(angular);
+    </script>
+
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Angular-drop</h1>
+      <h2 class="project-tagline">based on drop.js (http://github.hubspot.com/drop/docs/welcome/)</h2>
+      <a href="https://github.com/Effilab/angular-drop" class="btn" eff-drop="View on Github">View on GitHub</a>
+      <a href="https://github.com/Effilab/angular-drop/zipball/master" class="btn" eff-drop="Download .zip">Download .zip</a>
+      <a href="https://github.com/Effilab/angular-drop/tarball/master" class="btn" eff-drop="Download .tar.gz">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">

@@ -28,7 +28,7 @@
         var opts = {
           target: options.target[0],
           content: elem[0],
-          position: options.position || 'right middle',
+          position: options.position || 'bottom left',
           openOn: options.openOn || undefined,
           constrainToWindow: options.constrainToWindow || true,
           constrainToScrollParent: options.constrainToScrollParent || true,
@@ -84,9 +84,6 @@
           detachDrop();
         };
 
-        /**
-         * Close the drop
-         */
         function toogle(fn) {
           if ((drop) && (drop.isOpened()))
           {
@@ -98,13 +95,20 @@
           }
         };
 
+        function isOpened() {
+          if ((drop) && (drop.isOpened()))
+            return true;
+          return false;
+        }
+
         // Close the tooltip when the scope is destroyed.
         scope.$on('$destroy', close);
 
         return {
           open: open,
           close: close,
-          toogle: toogle
+          toogle: toogle,
+          isOpened: isOpened
         };
       };
     }];
@@ -121,21 +125,21 @@
         return {
           restrict: 'EA',
           scope: {
-            content:  '@' + name,
-            tether:  '=?' + name + 'Tether'
+            content:  '@' + name
           },
           link: function(scope, elem, attrs) {
-            var drop = wrapper(extend({
+            var drop = wrapper(angular.extend({
               target: elem,
-              scope: scope
-            }, options, { tether: scope.tether }));
+              scope: scope,
+
+            }, options));
 
             /**
              * Toggle the drop.
              */
-            elem.hover(function() {
+            $(elem).hover(function mouseenter() {
               scope.$apply(drop.open);
-            }, function() {
+            }, function mouseleave() {
               scope.$apply(drop.close);
             });
           }

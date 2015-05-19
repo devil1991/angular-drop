@@ -86,6 +86,8 @@ Create a custom directive.
 
 # Example
 
+*(look in your console)*
+
 <div ng-controller="MainController">
     <script id="my-drop.html" type="text/ng-template">
       <div class="drop">

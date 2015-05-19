@@ -6,7 +6,7 @@ tether.js (http://tether.io/)
 drop.js (http://github.hubspot.com/drop/docs/welcome/)
 
 # Usage
-```
+```html
 <script id="drop.html" type="text/ng-template">
   <div class="drop">
     <p>

@@ -2,7 +2,6 @@
 based on drop.js (http://github.hubspot.com/drop/docs/welcome/)
 
 # Dependencies
-tether.js (http://tether.io/)
 drop.js (http://github.hubspot.com/drop/docs/welcome/)
 
 # Usage

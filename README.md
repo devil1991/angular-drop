@@ -55,22 +55,13 @@ Create a custom directive.
                     constrainToScrollParent: true,
                     classes: 'drop-theme-arrows-bounce-dark',
                     tetherOptions:{},
+					openOn: 'click' // openOn: 'hover', openDelay: 500
                 });
                 scope.drop = drop;
                 scope.custom_close = function(text) {
                   scope.fn(text);
                   scope.drop.close();
                 }
-                // easy way
-                // elem.on('click', drop.toogle);
-                // hard way
-                elem.on('click', function(value) {
-                    if (scope.drop.isOpened())
-                        scope.drop.close();
-                    else
-                        scope.drop.open();
-                    console.log(scope.drop.isOpened());
-                });
               }
             };
           }]);

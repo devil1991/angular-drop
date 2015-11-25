@@ -48,69 +48,71 @@
          * Create a drop for the target and the template.
          */
         function attachDrop() {
-          if (drop)
-            detachDrop();
-          drop = new Drop(opts);
-          if (!drop.isOpened())
-          {
-            drop.open();
-          }
+        	if (drop)
+        		detachDrop();
+        	drop = new Drop(opts);
         };
 
-        /**
+      	/**
          * Detach the drop.
          */
         function detachDrop() {
-          if ((drop) && (drop.isOpened()))
-          {
-            drop.destroy();
-            drop = undefined;
-          }
+        	if ((drop) && (drop.isOpened()))
+        	{
+        		drop.destroy();
+        		drop = undefined;
+        	}
         };
 
-        /**
+      	/**
          * Open the drop
          */
         function open(fn) {
-          if (typeof(fn) == 'function')
-            fn(scope, true);
-          attachDrop();
+        	if (typeof(fn) == 'function')
+        		fn(scope, true);
+        	attachDrop();
+        	if (!drop.isOpened())
+        	{
+        		drop.open();
+        	}
         };
 
-        /**
+      	/**
          * Close the drop
          */
         function close(fn) {
-          if (typeof(fn) == 'function')
-            fn(scope, false);
-          detachDrop();
+        	if (typeof(fn) == 'function')
+        		fn(scope, false);
+        	detachDrop();
         };
 
         function toogle(fn) {
-          if ((drop) && (drop.isOpened()))
-          {
-            close(fn);
-          }
-          else
-          {
-            open(fn);
-          }
+        	if ((drop) && (drop.isOpened()))
+        	{
+        		close(fn);
+        	}
+        	else
+        	{
+        		open(fn);
+        	}
         };
 
         function isOpened() {
-          if ((drop) && (drop.isOpened()))
-            return true;
-          return false;
+        	if ((drop) && (drop.isOpened()))
+        		return true;
+        	return false;
         }
 
-        // Close the tooltip when the scope is destroyed.
+      	// Close the tooltip when the scope is destroyed.
         scope.$on('$destroy', close);
+      	// Prepare the tooltip to be shown when the scope is created.
+        attachDrop();
 
         return {
-          open: open,
-          close: close,
-          toogle: toogle,
-          isOpened: isOpened
+        	open: open,
+        	close: close,
+        	toogle: toogle,
+        	isOpened: isOpened
         };
       };
     }];

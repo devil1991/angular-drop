@@ -68,20 +68,20 @@
          * Open the drop
          */
         function open(fn) {
-        	if (typeof(fn) == 'function')
-        		fn(scope, true);
-        	attachDrop();
-        	if (!drop.isOpened())
-        	{
-        		drop.open();
-        	}
+            if (typeof(fn) == 'function')
+               fn(scope, true);
+            attachDrop();
+            if (!drop.isOpened())
+            {
+                drop.open();
+            }
         };
 
       	/**
          * Close the drop
          */
         function close(fn) {
-        	if (typeof(fn) == 'function')
+        	if (typeof (fn) == 'function')
         		fn(scope, false);
         	detachDrop();
         };

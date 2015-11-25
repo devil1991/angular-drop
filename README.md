@@ -55,7 +55,7 @@ Create a custom directive.
                     constrainToScrollParent: true,
                     classes: 'drop-theme-arrows-bounce-dark',
                     tetherOptions:{},
-					openOn: 'click' // openOn: 'hover', openDelay: 500
+                    openOn: 'click' // openOn: 'hover', openDelay: 500
                 });
                 scope.drop = drop;
                 scope.custom_close = function(text) {

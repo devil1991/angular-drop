@@ -30,6 +30,8 @@
           content: elem[0],
           position: options.position || 'bottom left',
           openOn: options.openOn || undefined,
+          openDelay: options.openDelay || undefined,
+          closeDelay: options.closeDelay || undefined,
           constrainToWindow: options.constrainToWindow || true,
           constrainToScrollParent: options.constrainToScrollParent || true,
           classes: options.classes || 'drop-theme-arrows-bounce-dark',
